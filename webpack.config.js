@@ -11,13 +11,15 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },  
     module: {
-        loaders: [{
+        loaders: [
+            {
                 test: /\.js|.jsx$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query:
                 {
-                  "presets": ["react"]
+                    //"plugins": ["transform-decorators-legacy"],
+                    presets: ['react', 'stage-0', 'es2015']
                 }
             },
             {
